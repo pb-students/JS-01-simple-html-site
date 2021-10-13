@@ -1,0 +1,277 @@
+:root {
+    --nav-height: 80px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1, h2, h3,
+h4, h5, h6,
+p, body, html, button {
+    margin: 0;
+    font-size: 1rem;
+}
+
+aside h3 {
+    padding-top: 24px;
+}
+
+aside article {
+    display: grid;
+    grid-template-columns: 64px calc(100% - 64px - 8px);
+    grid-gap: 8px;
+    padding-top: 16px;
+}
+
+aside article div {
+    max-width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+aside article p,
+aside article h4 {
+    text-overflow: ellipsis;
+    white-space: pre;
+    overflow: hidden;
+    color: #666;
+}
+
+aside article img {
+    height: 64px;
+    width: 64px;
+    object-fit: cover;
+}
+
+.date {
+    font-size: .875rem;
+    padding-bottom: 8px;
+    color: #777;
+}
+
+main > section > article {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    overflow: hidden;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 6px 6px 0 #e0e0e0;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+main > section > article img {
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    flex-grow: 0;
+    position: absolute;
+}
+
+main > section > article .img-container {
+    position: relative;
+}
+
+main > section > article > div:last-child {
+    padding: 64px 16px 64px 32px;
+}
+
+main > section > article h2 {
+    font-size: 2.25rem;
+    padding-bottom: 16px;
+}
+
+main > section > article p {
+    color: #333;
+    padding-bottom: 16px;
+}
+
+.btn,
+main > section > article button {
+    appearance: none;
+    background: #0af;
+    color: #fff;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, .2);
+    transition: background .1s ease;
+}
+
+.btn:hover,
+main > section > article button:hover {
+    background: #fa0;
+    cursor: pointer;
+}
+
+
+.container {
+    padding: 0 16px;
+    width: 100%;
+    max-width: 1124px;
+    margin: 0 auto;
+}
+
+header {
+    background-image: url(assets/estudio-bloom-oj9-77qT3i0-unsplash.jpg);
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ffaa00;
+    text-shadow: .2rem .2rem #c07e00,  .4rem .4rem #936100;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: rgba(255,255,255,.9);
+    backdrop-filter: blur(7px);
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    height: var(--nav-height);
+}
+
+.nav-shadow {
+    content: '';
+    position: sticky;
+    top: 0;
+    height: var(--nav-height);
+    margin-top: calc(var(--nav-height) * -1);
+    z-index: 1;
+    width: 100%;
+    box-shadow: 0 0 7px #0003;
+}
+
+nav a {
+    padding: 8px 16px;
+    display: block;
+    font-size: 1.25rem;
+    color: #0af;
+    text-decoration: none;
+}
+
+h1 > span {
+    font-size: .785em;
+}
+
+.block {
+    display: block;
+}
+
+main {
+    padding: 64px 0;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.logo svg {
+    height: 60px;
+    margin-right: 1rem;
+}
+
+aside {
+    width: 300px;
+    border-right: 1px solid #e0e0e0;
+    position: absolute;
+    top: calc(var(--nav-height) * -1);
+    bottom: 0;
+    left: 0;
+    padding-top: var(--nav-height);
+    z-index: 2;
+    background: white;
+}
+
+aside .aside-content {
+    position: sticky;
+    top: 20px;
+    padding: 0 16px;
+}
+
+footer {
+    background: #e0e0e0;
+    padding: 1.5rem 0;
+    color: #666;
+}
+
+footer > .container {
+    display: flex;
+    align-items: center;
+}
+
+footer a {
+    margin-left: auto;
+}
+
+footer a img {
+    height: 4rem;
+}
+
+a {
+    color: #0af;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fa0;
+}
+
+.search-input {
+    display: flex;
+    flex-flow: row-reverse;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.search-input input {
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 10px 0 0 10px;
+    box-shadow: inset 0 -4px 0 0 #e0e0e0;
+    display: block;
+    flex-grow: 1;
+    outline: none;
+    transition: box-shadow .1s ease;
+}
+
+.search-input input:focus {
+    box-shadow: inset 0 -4px 0 0 #0af;
+}
+
+.search-input button:hover + input:focus {
+    box-shadow: inset 0 -4px 0 0 #fa0;
+}
+
+.search-input button {
+    border-radius: 0 10px 10px 0;
+}
+
+.search-input svg {
+    height: 1em;
+}
+
+img {
+    max-width: 100%;
+}
